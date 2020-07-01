@@ -10,33 +10,32 @@
 	</head>
 	<body>
 		<main>
-			<header>
-				<button class="tablinks active" onclick="changeTab(event, 'timer')">Timer</button>
-				<button class="tablinks" onclick="changeTab(event, 'stopwatch')">Stopwatch</button>
-			</header>
-			<section class="tabcontent timer" id="timer">
-				<!-- Display number (just for example)-->
-				<p>
-					<span id="minute_timer">5</span>
-					<span class="minute_m">m</span>
-					<span id="second_timer">00</span>
-					<span class="second_s">s</span>
-				</p>
-			</section>
-			<section class="tabcontent stopwatch" id="stopwatch">
-				<!-- Display number (just for example)-->
-				<p>0s</p>
-			</section>
-			<footer>
-				<button id="start" class="commands">Start</button>
-				<button id="reset" class="commands">Reset</button>
-			</footer>
+            <header>
+                <button class="tablinks active" onclick="changeTab(event, 'timer')">Timer</button>
+                <button class="tablinks" onclick="changeTab(event, 'stopwatch')">Stopwatch</button>
+            </header>
+			<section class='tabcontent timer' id='timer'>
+                <!-- Display number (just for example)-->
+                <p>
+		    <span id="minute_timer">5</span>
+            	    <span class="minute_m">m</span>
+            	    <span id="second_timer">00</span>
+            	    <span class="second_s">s</span>
+		</p>
+            </section>
+            <section class='tabcontent stopwatch' id='stopwatch'>
+                <!-- Display number (just for example)-->
+                <p id="display-stopwatch">00:00:00</p>
+            </section>
+            <footer>
+                <button class='commands' id="start-stop" onclick="startStop()">Start</button>
+                <button class='commands' id="reset" onclick="reset()">Reset</button>
+            </footer>
 		</main>
-
-		<!-- load the script -->
-		<script src="./scripts/script.js"></script>
-
-		<script src="./scripts/timer.js"></script>
-		<!-- <script src='./scripts/stopwatch.js'></script> -->
-	</body>
+			
+      <!-- load the script -->	
+      <script src='./scripts/script.js'></script>
+      <script src="./scripts/stopwatch.js"></script>
+      <script src='./scripts/timer.js'></script>
+    </body>
 </html>
