@@ -7,6 +7,9 @@
  let displaySeconds = 0;
  let displayMinutes = 0;
  let displayHours = 0;
+ let hourChar = '';
+ let minuteChar = '';
+ 
 
  //Define var to hold setInterval() function
  // to manage when to start the stopwatch, so it doesn't start automatically when the window is open
@@ -38,51 +41,65 @@
      } else {
          displaySeconds = seconds;
      }
-
-     if(minutes < 10) {
+     if(minutes === 0) {
+         displayMinutes = '';
+         minuteChar = '';
+     }
+     else if(minutes > 0 && minutes < 10) {
          displayMinutes = "0" + minutes.toString();
+         minuteChar = `<span class='minute_stopwatch'>m</span>`;
      } else {
-         displayMinutes = minutes
+         displayMinutes = minutes;
+         minuteChar = `<span class='minute_stopwatch'>m</span>`;
      }
 
-     if(hours < 10) {
+     if(hours === 0) {
+         displayHours = '';
+         hourChar = '';
+     }
+     else if(hours > 0 && hours < 10) {
          displayHours = "0" + hours.toString();
+         hourChar = `<span>h</span>`;
      } else {
          displayHours = hours;
+         hourChar = `<span>h</span>`;
      }
 
      //display output with updated time values to user (check html file id display) then set how the display will be
-     document.getElementById("display-stopwatch").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+     document.getElementById("display-stopwatch").innerHTML = `${displayHours}${hourChar}${displayMinutes}${minuteChar}${displaySeconds}<span class='second_stopwatch'>s</span>`;
  }
 
  //LOGIC to start/stop the stopwatch
-function startStop() {
+function startStopwatch() {
+   
     if (status === "stopped") {
 
         //start the stopwatch: re-assign function interval, call the setInterval built-in function with its parameters
         interval = window.setInterval(stopwatch, 1000);
         //start-stop button, linked it to ID in the html
-        document.getElementById("start-stop").innerHTML = "STOP";
+        document.getElementById("start-stopwatch").innerHTML = "STOP";
         status = "started";
+        console.log('--Stopwatch starts--');
     }
     else {
         //stop the stopwatch: call the clearInterval built-in function(parameter: basic interval === null)
         window.clearInterval(interval);
         //start-stop button, linked it to ID in the html
-        document.getElementById("start-stop").innerHTML = "START";
+        document.getElementById("start-stopwatch").innerHTML = "START";
         status = "stopped";
+        console.log('--Stopwatch stops--');
     }
 }
 
 //LOGIC to reset button : set all to 00:00:00
-function reset() {
+function resetStopwatch() {
     window.clearInterval(interval);
     seconds = 0;
     minutes = 0;
     hours = 0;
     //reset button, linked it to ID in the html
-    document.getElementById("display-stopwatch").innerHTML = "00:00:00";
+    document.getElementById("display-stopwatch").innerHTML = `00<span class='second_stopwatch'>s</span>`;
     //start-start button, linked it to ID in the html
-    document.getElementById("start-stop").innerHTML= "START";
-
+    document.getElementById("start-stopwatch").innerHTML= "START";
+    console.log('--Stopwatch is reset--');
 }

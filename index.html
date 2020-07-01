@@ -27,7 +27,6 @@
                 </button>
             </header>
 			<section class='tabcontent timer' id='timer'>
-                <!-- Display number (just for example)-->
                 <p>
 		            <span id="minute_timer">5</span>
             	    <span class="minute_m">m</span>
@@ -35,24 +34,24 @@
             	    <span class="second_s">s</span>
                 </p>
                 <footer>
-                    <button class='commands' id="start-timer" onclick="startStop()">Start</button>
-                    <button class='commands' id="reset-timer" onclick="reset()">Reset</button>
+                    <button class='commands' id="start-timer">Start</button>
+                    <button class='commands' id="reset-timer">Reset</button>
                 </footer>
             </section>
             <section class='tabcontent stopwatch' id='stopwatch'>
-                <!-- Display number (just for example)-->
-                <p id="display-stopwatch">00:00:00</p>
+                <p id="display-stopwatch">00
+                    <span class='second_stopwatch' style='margin-left: -12px;'>s</span>
+                </p>
                 <footer>
-                    <button class='commands' id="start-stop" onclick="startStop()">Start</button>
-                    <button class='commands' id="reset" onclick="reset()">Reset</button>
+                    <button class='commands' id="start-stopwatch" onclick="startStopwatch()">Start</button>
+                    <button class='commands' id="reset-stopwatch" onclick="resetStopwatch()">Reset</button>
                 </footer>
             </section>
 		</main>
 			
       <!-- load the script -->	
-      <script src='./scripts/script.js'></script>
-      <script src="./scripts/stopwatch.js"></script>
-<!--  comments for avoid mistakes before the files is not done. Exclude after files in place
-      <script src='./scripts/timer.js'></script>
+        <script src='./scripts/script.js'></script>
+        <script src="./scripts/stopwatch.js"></script>
+        <script src='./scripts/timer.js'></script>
     </body>
 </html>
