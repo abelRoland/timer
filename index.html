@@ -3,7 +3,8 @@
 
 	<head>
 	  <meta charset='UTF-8'>
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	  <title>Timer / Stopwatch</title>
 	
 	  <!-- load the styles -->
@@ -14,26 +15,38 @@
 		
 		<main>
             <header>
-                <button class="tablinks active" onclick="changeTab(event, 'timer')">Timer</button>
-                <button class="tablinks" onclick="changeTab(event, 'stopwatch')">Stopwatch</button>
+                <button class="tablinks active" onclick="changeTab(event, 'timer')">
+                    <span class="material-icons icon">
+                    hourglass_empty
+                    </span>Timer
+                </button>
+                <button class="tablinks" onclick="changeTab(event, 'stopwatch')">
+                    <span class="material-icons icon">
+                        timer
+                    </span>Stopwatch
+                </button>
             </header>
 			<section class='tabcontent timer' id='timer'>
                 <!-- Display number (just for example)-->
                 <p>
-		    <span id="minute_timer">5</span>
+		            <span id="minute_timer">5</span>
             	    <span class="minute_m">m</span>
             	    <span id="second_timer">00</span>
             	    <span class="second_s">s</span>
-		</p>
+                </p>
+                <footer>
+                    <button class='commands' id="start-timer" onclick="startStop()">Start</button>
+                    <button class='commands' id="reset-timer" onclick="reset()">Reset</button>
+                </footer>
             </section>
             <section class='tabcontent stopwatch' id='stopwatch'>
                 <!-- Display number (just for example)-->
                 <p id="display-stopwatch">00:00:00</p>
+                <footer>
+                    <button class='commands' id="start-stop" onclick="startStop()">Start</button>
+                    <button class='commands' id="reset" onclick="reset()">Reset</button>
+                </footer>
             </section>
-            <footer>
-                <button class='commands' id="start-stop" onclick="startStop()">Start</button>
-                <button class='commands' id="reset" onclick="reset()">Reset</button>
-            </footer>
 		</main>
 			
       <!-- load the script -->	
