@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+	  <meta charset='UTF-8'>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>Timer / Stopwatch</title>
+	
+	  <!-- load the styles -->
+	  <link rel="stylesheet" href="./style.css">
+	
+	</head>
+	<body>
+		
+		<main>
+            <header>
+                <button class="tablinks active" onclick="changeTab(event, 'timer')">Timer</button>
+                <button class="tablinks" onclick="changeTab(event, 'stopwatch')">Stopwatch</button>
+            </header>
+			<section class='tabcontent timer' id='timer'>
+                <!-- Display number (just for example)-->
+                <p>
+		    <span id="minute_timer">5</span>
+            	    <span class="minute_m">m</span>
+            	    <span id="second_timer">00</span>
+            	    <span class="second_s">s</span>
+		</p>
+            </section>
+            <section class='tabcontent stopwatch' id='stopwatch'>
+                <!-- Display number (just for example)-->
+                <p>0s</p>
+            </section>
+            <footer>
+                <button class='commands'>Start</button>
+                <button class='commands'>Reset</button>
+            </footer>
+		</main>
+			
+      <!-- load the script -->	
+      <script src='./scripts/script.js'></script>
+<!--  comments for avoid mistakes before the files is not done. Exclude after files in place
+      <script src='./scripts/timer.js'></script>
+      <script src='./scripts/stopwatch.js'></script> -->
+    </body>
+</html>
