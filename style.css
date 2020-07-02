@@ -103,5 +103,33 @@ footer {
 #animation {
 	position: absolute;
 	left: 0;
-	bottom: -4px;
+	bottom: 2px;
+}
+
+.icon {
+	font-size: 16px;
+	margin-right: 10px;
+}
+.hour_stopwatch {
+	font-size: 28px;
+	margin: 0 5px 0 0;
+}
+
+.minute_m {
+	font-size: 28px;
+	margin-left: -14px;
+}
+
+.minute_stopwatch {
+	font-size: 28px;
+	margin: 0 15px 0 2px;
+}
+.second_s {
+	font-size: 28px;
+	margin-left: -14px;
+}
+
+.second_stopwatch {
+	font-size: 28px;
+	margin-left: 5px;
 }

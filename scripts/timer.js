@@ -6,7 +6,8 @@ let default_minute = Number(document.getElementById('minute_timer').textContent)
 let count_second = Number(document.getElementById('second_timer').textContent);
 
 // get button label
-let button_label = document.getElementById('start-stop').textContent;
+
+let button_label = document.getElementById('start-timer').textContent;
 
 //make global interval
 let set_interval;
@@ -20,7 +21,8 @@ let total_time = sumTime();
 //console.log(total_time);
 
 // change button status
-let button_status = document.getElementById('start-stop');
+
+let button_status = document.getElementById('start-timer');
 
 function changeStatus(status) {
 	return status === 'Start' ? 'Stop' : 'Start';
@@ -31,13 +33,13 @@ let starter_width = 0;
 //increment per second
 let increment = Math.floor(total_width / (default_minute * 60 + count_second));
 
-document.getElementById('start-stop').addEventListener('click', function () {
+document.getElementById('start-timer').addEventListener('click', function () {
 	//debugger;
 	button_status.innerHTML = changeStatus(button_label);
 
 	if (!set_interval) {
 		set_interval = setInterval(startTimer, 1000);
-
+		console.log('--Timer starts--');
 		function startTimer() {
 			// very first time to reduce minute
 			starter_width += increment;
@@ -68,7 +70,10 @@ document.getElementById('start-stop').addEventListener('click', function () {
 			--total_time;
 			if (total_time < 0) {
 				clearInterval(set_interval);
+
 				alert('time is up');
+				console.log('--Time is up--');
+
 				document.getElementById('minute_timer').innerHTML = 5;
 				document.getElementById('second_timer').innerHTML = '00';
 				button_status.innerHTML = changeStatus('Finish');
@@ -85,7 +90,9 @@ document.getElementById('start-stop').addEventListener('click', function () {
 		//debugger;
 		clearInterval(set_interval);
 		set_interval = null;
+
 		button_status.innerHTML = changeStatus('Stop');
+		console.log('--Timer stops--');
 	}
 
 	//
@@ -93,7 +100,7 @@ document.getElementById('start-stop').addEventListener('click', function () {
 
 // reset
 
-document.getElementById('reset').addEventListener('click', function () {
+document.getElementById('reset-timer').addEventListener('click', function () {
 	//debugger;
 	clearInterval(set_interval);
 	document.getElementById('minute_timer').innerHTML = 5;
@@ -106,4 +113,5 @@ document.getElementById('reset').addEventListener('click', function () {
 	starter_width = 0;
 	document.getElementById('line').setAttribute('x2', starter_width);
 	set_interval = null;
+	console.log('--Timer is reset--');
 });
