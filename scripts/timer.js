@@ -6,7 +6,10 @@ let default_minute = Number(document.getElementById('minute_timer').textContent)
 let count_second = Number(document.getElementById('second_timer').textContent);
 
 // get button label
+
 let button_label = document.getElementById('start-timer').textContent;
+
+
 
 //make global interval
 let set_interval;
@@ -20,11 +23,14 @@ let total_time = sumTime();
 //console.log(total_time);
 
 // change button status
+
 let button_status = document.getElementById('start-timer');
+
 
 function changeStatus(status) {
 	return status === 'Start' ? 'Stop' : 'Start';
 }
+
 
 document.getElementById('start-timer').addEventListener('click', function () {
 	//debugger;
@@ -37,6 +43,7 @@ document.getElementById('start-timer').addEventListener('click', function () {
 		function startTimer() {
             
             // very first time to reduce minute
+
 			if (count_second === 0) {
 				count_second = 60;
 			}
@@ -58,8 +65,10 @@ document.getElementById('start-timer').addEventListener('click', function () {
 			--total_time;
 			if (total_time < 0) {
 				clearInterval(set_interval);
+
                 alert('time is up');
                 console.log('--Time is up--');
+
 				document.getElementById('minute_timer').innerHTML = 5;
 				document.getElementById('second_timer').innerHTML = '00';
 				button_status.innerHTML = changeStatus('Finish');
@@ -73,8 +82,10 @@ document.getElementById('start-timer').addEventListener('click', function () {
 		//debugger;
 		clearInterval(set_interval);
 		set_interval = null;
+
         button_status.innerHTML = changeStatus('Stop');
         console.log('--Timer stops--');
+
 	}
 
 	//
@@ -82,7 +93,10 @@ document.getElementById('start-timer').addEventListener('click', function () {
 
 // reset
 
+
 document.getElementById('reset-timer').addEventListener('click', function () {
+
+
 	//debugger;
 	clearInterval(set_interval);
 	document.getElementById('minute_timer').innerHTML = 5;
@@ -94,3 +108,5 @@ document.getElementById('reset-timer').addEventListener('click', function () {
     set_interval = null;
     console.log('--Timer is reset--');
 });
+
+
