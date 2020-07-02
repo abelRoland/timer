@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<title>Timer / Stopwatch</title>
 
-	  <meta charset='UTF-8'>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	  <title>Timer / Stopwatch</title>
-	
-	  <!-- load the styles -->
-	  <link rel="stylesheet" href="./style.css">
-	
+		<!-- load the styles -->
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
 		<main>
-            <header>
-                <button class="tablinks active" onclick="changeTab(event, 'timer')">
-                    <span class="material-icons icon">
-                    hourglass_empty
-                    </span>Timer
-                </button>
-                <button class="tablinks" onclick="changeTab(event, 'stopwatch')">
-                    <span class="material-icons icon">
-                        timer
-                    </span>Stopwatch
-                </button>
-            </header>
-			<section class='tabcontent timer' id='timer'>
-                <p>
-		            <span id="minute_timer">5</span>
-            	    <span class="minute_m">m</span>
-            	    <span id="second_timer">00</span>
-            	    <span class="second_s">s</span>
-                </p>
-                <footer>
-                    <button class='commands' id="start-timer">Start</button>
-                    <button class='commands' id="reset-timer">Reset</button>
-                </footer>
-            </section>
-            <section class='tabcontent stopwatch' id='stopwatch'>
-                <p id="display-stopwatch">00
-                    <span class='second_stopwatch' style='margin-left: -12px;'>s</span>
-                </p>
-                <footer>
-                    <button class='commands' id="start-stopwatch" onclick="startStopwatch()">Start</button>
-                    <button class='commands' id="reset-stopwatch" onclick="resetStopwatch()">Reset</button>
-                </footer>
-            </section>
+			<header>
+				<button class="tablinks active" onclick="changeTab(event, 'timer')">
+					<span class="material-icons icon">
+						hourglass_empty
+					</span>
+					Timer
+				</button>
+				<button class="tablinks" onclick="changeTab(event, 'stopwatch')">
+					<span class="material-icons icon">
+						timer
+					</span>
+					Stopwatch
+				</button>
+			</header>
+			<section class="tabcontent timer" id="timer">
+				<p>
+					<span id="minute_timer">5</span>
+					<span class="minute_m">m</span>
+					<span id="second_timer">00</span>
+					<span class="second_s">s</span>
+				</p>
+				<svg height="6" width="600" id="animation">
+					<line id="line" x1="0" y1="0" x2="0" y2="0" style="stroke: rgb(66, 133, 244, 1); stroke-width: 6;" />
+				</svg>
+				<footer>
+					<button class="commands" id="start-timer">Start</button>
+					<button class="commands" id="reset-timer">Reset</button>
+				</footer>
+			</section>
+			<section class="tabcontent stopwatch" id="stopwatch">
+				<p id="display-stopwatch">
+					00
+					<span class="second_stopwatch" style="margin-left: -12px;">s</span>
+				</p>
+				<footer>
+					<button class="commands" id="start-stopwatch" onclick="startStopwatch()">Start</button>
+					<button class="commands" id="reset-stopwatch" onclick="resetStopwatch()">Reset</button>
+				</footer>
+			</section>
 		</main>
-			
-      <!-- load the script -->	
-        <script src='./scripts/script.js'></script>
-        <script src="./scripts/stopwatch.js"></script>
-        <script src='./scripts/timer.js'></script>
-    </body>
 
+		<!-- load the script -->
+		<script src="./scripts/script.js"></script>
+		<script src="./scripts/stopwatch.js"></script>
+		<script src="./scripts/timer.js"></script>
+	</body>
 </html>
